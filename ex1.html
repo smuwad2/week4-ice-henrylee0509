@@ -23,8 +23,32 @@
                 // Invalid email: Email must contain the character @.
                 // Empty password: Password must be non-empty.
                 var errorMessages="";
-                
-                
+                const formEle = document.forms['inputForm'];
+                const userID = formEle['id'].value
+                const userAge = formEle['age'].value
+                const userEmail = formEle['email'].value
+                const userPW = formEle['password'].value
+                if(userID.length > 10){
+                    errorMessages += 'Id length cannot be more than 10.\n'
+                }
+                if(userAge<10 || userAge>40){
+                    // console.log('Age must be between 10 and 40.')
+                    errorMessages += 'Age must be between 10 and 40.\n'
+                }
+                if(!(userEmail.includes('@'))){
+                    // console.log('Email must contain the character @.')
+                    errorMessages += 'Email must contain the character @.\n'
+                }
+                if(userPW.trim().length == 0){
+                    // console.log('Password must be non-empty.')
+                    errorMessages += 'Password must be non-empty.\n'
+                }
+                // to display error message if there is error + prevent invalid form submission
+                if(errorMessages.length!=0){
+                    alert(errorMessages)
+                    return false
+                }
+                return true
             }
      
          </script>

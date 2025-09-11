@@ -19,6 +19,20 @@
     <script>
         
         // add code here
+        // 1. access dropdown
+        // 2. get name of selected item
+        // 3. add selected item to shoplist
+        // note: for buttons addEvenListener use 'click' for dropdown use 'change'
+        const dropdown = document.getElementById('select_item')
+        dropdown.addEventListener('change', addItem)
+        function addItem(){
+            const shopListUl = document.getElementById('shopList')
+            const liEle = document.createElement('li')
+            const newItemName = dropdown.value
+            liEle.innerText = newItemName
+            shopListUl.appendChild(liEle)
+
+        }
         
         
     </script>

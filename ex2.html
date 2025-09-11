@@ -10,7 +10,6 @@
         }
 
         /* add CSS code here */
-        
     </style>
 
     
@@ -26,7 +25,23 @@
     <script>
         var square=true;
        // add code here
-        
+        function changeShape(){
+            // get element
+            let shape = document.getElementById('div1');
+            // check if its a square
+            if(square){
+                // if its a square, change to a circle
+                // border-radius of a circle is 50%
+                shape.style.borderRadius = '50%'
+            }
+            else{
+                // if its not a square, change to a sqaure
+                // border-radius of a circle is 0
+                shape.style.borderRadius = '0px'
+            }
+            // toggle according to current shape
+            square = !square
+        }
     </script>
 
 </body>
